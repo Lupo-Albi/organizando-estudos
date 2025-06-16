@@ -8,7 +8,7 @@ export class UsersService {
   private users: User[] = [];
   private currentId = 1;
 
-  create(createUserInput: CreateUserInput): User {
+  create = (createUserInput: CreateUserInput): User => {
     const newUser: User = {
       id: this.currentId++,
       name: createUserInput.name,
@@ -19,21 +19,21 @@ export class UsersService {
 
     this.users.push(newUser);
     return newUser;
-  }
+  };
 
-  findAll(): User[] {
+  findAll = (): User[] => {
     return this.users;
-  }
+  };
 
-  findOne(id: number): User | undefined {
+  findOne = (id: number): User | undefined => {
     return this.users.find((user) => user.id === id);
-  }
+  };
 
-  update(id: number, updateUserInput: UpdateUserInput) {
+  update = (id: number, updateUserInput: UpdateUserInput) => {
     return `This action updates a #${id} user`;
-  }
+  };
 
-  remove(id: number) {
+  remove = (id: number) => {
     return `This action removes a #${id} user`;
-  }
+  };
 }
